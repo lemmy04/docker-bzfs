@@ -13,6 +13,7 @@ docker run -p 5154:5154 -p 5154:5154/udp lemmy04/bzfs
 all configuration and map files reside in /var/bzfs, copy them from the container to a local folder, edit them, then either copy them back or map that local folder into the container. There are additional maps in /usr/share/bzflag/maps that can be referenced in bzfs.conf, or you can put your own map in.
 
 Available maps:
+----
 /usr/share/bzflag/maps/alderon.bzmap
 /usr/share/bzflag/maps/camp_swampy.bzmap
 /usr/share/bzflag/maps/golden_gate-4.0.bzmap
@@ -24,6 +25,7 @@ Available maps:
 /usr/share/bzflag/maps/teleport.bzmap
 /usr/share/bzflag/maps/urbancombat.bzmap
 /usr/share/bzflag/maps/zion.bzmap
+----
 
 To run the container with a mapped config folder:
 ----
