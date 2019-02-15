@@ -1,8 +1,8 @@
-FROM fedora:latest
+FROM opensuse/leap:15.0
+LABEL description="Running a bzflag server in a docker container"
 MAINTAINER Mathias.Homann@opensuse.org
 
-RUN dnf -y update && dnf clean all
-RUN dnf -y install bzflag
+RUN zypper install -y -l bzflag
 
 ADD bzfs.conf /var/bzfs/
 ADD vars.txt /var/bzfs/
@@ -10,4 +10,4 @@ ADD map.bzw /var/bzfs/
 
 EXPOSE 5154 5154/udp
 
-CMD ["/bin/bzfs","-conf","/var/bzfs/bzfs.conf"]
+CMD ["/usr/bin/bzfs","-conf","/var/bzfs/bzfs.conf"]
