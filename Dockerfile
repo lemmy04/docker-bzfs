@@ -4,7 +4,7 @@ MAINTAINER Mathias.Homann@opensuse.org
 
 RUN zypper addrepo -r https://download.opensuse.org/repositories/home:/lemmy04/openSUSE_Leap_15.0/home:lemmy04.repo
 RUN zypper cc --all
-RUN zypper refresh
+RUN zypper refresh --gpg-auto-import-keys
 RUN zypper patch -y -l
 RUN zypper install -y -l bzflag
 
