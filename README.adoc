@@ -1,11 +1,12 @@
 BZFlag server docker container
 
-.build
-----
-docker build -t bzfs .
-----
-
 .run
 ----
-docker run -p 5154:5154 bzfs
+docker run -p 5154:5154 -p 5154:5154/udp bzfs
+----
+
+.config
+----
+all configuration and map files reside in /var/bzfs, copy them from the container to a local folder, edit them, then either copy them back or map that local folder into the container:
+docker run -p 5154:5154 -p 5154:5154/udp -v /home/lemmy04/bzfs:/var/bzfs lemmy04/bzfs 
 ----
