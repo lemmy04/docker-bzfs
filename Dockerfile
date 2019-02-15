@@ -1,11 +1,11 @@
 FROM fedora:latest
-MAINTAINER akw
+MAINTAINER Mathias.Homann@opensuse.org
 
 RUN dnf -y update && dnf clean all
 RUN dnf -y install bzflag
 
-ADD ./bzfs.conf /usr/local/etc
+mkdir -p /var/bzfs
 
 EXPOSE 5154
 
-CMD ["/bin/bzfs","-conf","/usr/local/etc/bzfs.conf"]
+CMD ["/bin/bzfs","-conf","/var/bzfs/bzfs.conf"]
