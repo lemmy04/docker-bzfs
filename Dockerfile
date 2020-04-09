@@ -10,7 +10,7 @@ RUN useradd \
         -U \
         bzfs
 
-## build date: 2020-04-07
+## build date: 2020-04-09
 RUN zypper addrepo -r https://download.opensuse.org/repositories/home:/lemmy04/openSUSE_Leap_15.1/home:lemmy04.repo
 RUN zypper clean --all
 
