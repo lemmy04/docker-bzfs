@@ -10,8 +10,8 @@ RUN useradd \
         -U \
         bzfs
 
-## build date: 2020-04-09
-RUN zypper addrepo -r https://download.opensuse.org/repositories/home:/lemmy04/openSUSE_Leap_15.1/home:lemmy04.repo
+## build date: 2020-06-24
+RUN zypper addrepo -r https://download.opensuse.org/repositories/games/openSUSE_Leap_15.1/games.repo
 RUN zypper clean --all
 
 RUN zypper --gpg-auto-import-keys refresh
@@ -19,6 +19,8 @@ RUN zypper patch -y -l --with-optional ; exit 0
 RUN zypper patch -y -l --with-optional ; exit 0
 
 RUN zypper install -y -l bzflag
+
+RUN zypper clean --all
 
 ADD bzfs.conf /var/bzfs/
 ADD vars.txt /var/bzfs/
@@ -28,4 +30,4 @@ EXPOSE 5154 5154/udp
 
 WORKDIR /home/bzfs
 USER bzfs
-CMD ["/usr/bin/bzfs","-conf","/var/bzfs/bzfs.conf"]
+ENTRYPOINT ["/usr/bin/bzfs","-conf","/var/bzfs/bzfs.conf"]
