@@ -30,4 +30,5 @@ EXPOSE 5154 5154/udp
 
 WORKDIR /home/bzfs
 USER bzfs
-CMD ["/usr/bin/bzfs","-conf","/var/bzfs/bzfs.conf"]
+ENTRYPOINT ["/usr/bin/bzfs","-conf"]
+CMD        ["/var/bzfs/bzfs.conf"]
