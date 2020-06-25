@@ -31,3 +31,9 @@ To run the container with a mapped config folder:
 ----
 docker run -p 5154:5154 -p 5154:5154/udp -v /home/lemmy04/bzfs:/var/bzfs lemmy04/bzfs 
 ----
+
+To run the container with a different config file, pass the path to it
+**inside** the container as argument:
+
+docker run -p 5154:5154 -p 5154:5154/udp -v /home/lemmy04/bzfs:/var/bzfs lemmy04/bzfs /var/bzfs/myconf.conf
+
