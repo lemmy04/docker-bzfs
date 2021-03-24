@@ -1,4 +1,4 @@
-FROM opensuse/leap:15.1
+FROM opensuse/leap:15.2
 LABEL description="Running a bzflag server in a docker container"
 MAINTAINER Mathias.Homann@opensuse.org
 
@@ -10,8 +10,8 @@ RUN useradd \
         -U \
         bzfs
 
-## build date: 2020-06-24
-RUN zypper addrepo -r https://download.opensuse.org/repositories/games/openSUSE_Leap_15.1/games.repo
+## build date: 2021-03-24
+RUN zypper addrepo -r https://download.opensuse.org/repositories/games/openSUSE_Leap_15.2/games.repo
 RUN zypper clean --all
 
 RUN zypper --gpg-auto-import-keys refresh
